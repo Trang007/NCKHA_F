@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <title>A_F</title>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="sky" src="nentroi.jpg" /> 
+        <video id="stockt" autoplay loop="true" src="stockt.webm"> </video>
+        <a-asset-item
+        id="medieval_village"
+        src="medieval_village/scene.gltf"
+      ></a-asset-item>
+      <a-asset-item
+      id="medievalfantasy_props"
+      src="medievalfantasy_props/scene1.gltf"
+    ></a-asset-item>
+      </a-assets>
+      
+      <a-sky src="#sky" rotation="0 64 0"> </a-sky>
+      <!--Plane-->
+      <a-plane
+        material="color:#00AA00;
+      shader: flat "
+        rotation="-90 0 0"
+        scale="10000 10000 1"
+      >
+      </a-plane>
+      <a-entity gltf-model="#medieval_village" position="0 0.024 1" >
+      </a-entity>
+      <a-entity gltf-model="#medievalfantasy_props" position="-11.6 0.024 0" scale="1 1 1">
+      </a-entity>
+      <a-entity position="0 -1.2 0">
+        <a-camera> </a-camera>
+      </a-entity>
+      <a-video src="#stockt" width="3" height="3" position="2 1 0"></a-video>
+      
+    </a-scene>
+    <script>
+      document.querySelector("#stockt").addEventListener("click", function() {
+        var video = document.createElement("a-video");
+        video.setAttribute("src", "#stockt");
+        video.setAttribute("width", "16");
+        video.setAttribute("height", "9");
+        video.setAttribute("position", "0 1.8 -4");
+        
+        var scene = document.querySelector("a-scene");
+        scene.appendChild(video);
+      });
+    </script>
+  </body>
+</html>
