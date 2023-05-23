@@ -7,10 +7,18 @@
     <a-scene>
       <a-assets preload="true">
         <img id="sky" src="nentroi.jpg" /> 
-        <video id="stockt" autoplay loop="true" src="stockt.webm"> </video>
+        <video id="ocean" autoplay loop="true" src="ocean(1440p).mp4"> </video>
         <a-asset-item
         id="issum"
         src="issum/scene.gltf"
+      ></a-asset-item>
+      <a-asset-item
+        id="1-village"
+        src="1-village/scene 2.gltf"
+      ></a-asset-item>
+      <a-asset-item
+        id="castle"
+        src="castle_eltz/scene3.gltf"
       ></a-asset-item>
       <a-asset-item
         id="dae"
@@ -28,12 +36,16 @@
       </a-plane> 
       <a-entity gltf-model="#dae" position="200 -12 80 " >
       </a-entity>
+      <a-entity gltf-model="#castle" position="600 1 10 " >
+      </a-entity>
+      <a-entity gltf-model="#1-village" position="400 3 10 " >
+      </a-entity>
       <a-entity gltf-model="#issum" position="0 0.025 1" >
       </a-entity>
       <a-entity position="0 1.2 0">
         <a-camera position="1 6 0"> </a-camera>
       </a-entity>
-      <a-video src="#stockt" width="3" height="3" position="6 15 0"></a-video>
+      <a-video src="#ocean" width="3" height="3" position="6 15 0"></a-video>
     </a-scene>  
   </body>
 </html>
